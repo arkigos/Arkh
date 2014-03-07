@@ -1,61 +1,30 @@
 extends layout
 
 block title
-    title Sweet Pea Floral & Gift
-    
-append prescripts
-    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js")
-    
-append postscripts
-    script.
-        $.backstretch("http://static.dev.sweetpeafloralandgift.com/media/site/background_image/cherry.jpg");
-        
+    title ARKH
+
 block content
-    .controller(ng-controller="TypistCtrl")
-        nav.nav.navbar-inverse
-            .navbar-header
-                button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-collapse")
-                    span.sr-only Toggle Navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.navbar-brand(href="#").font-sofia Sweet Pea Floral & Gift
-            .collapse.navbar-collapse.navbar-right(id="navbar-collapse")
-                ul.nav.navbar-nav.font-badscript
-                    li
-                        a(href="").dropdown-toggle Shop
-                        ul.dropdown-menu
-                            li(ng-repeat="cat in categories")
-                                a(href="") {{ cat }}
-                    li
-                        a(href="") Contact
-                    li
-                        a(href="") Map
-                    li
-                        a(href="") About Us
-                    li
-                        a(href="") Home
+    .controller(ng-controller="ArkhCtrl")
         .container
-            br
-            .row
-                .col-md-12.text-center
-                    img(src="http://static.dev.sweetpeafloralandgift.com/media/site/banner_image/sweetpealogoblackand_white.png")
-            .row
-                .col-md-5.text-center
-                    strong.font-badscript {{ blurbs.left }}
-                .col-md-2
-                .col-md-5.text-center
-                    strong.blurbs {{ blurbs.right }}
-        .row
-            .col-md-12.blackback
-                .container
-                    ul.nav.nav-justified.nav-pills
-                        li(ng-repeat="item in menu")
-                            a(href="", ng-click="setSlide($index)") {{ item }}
-                    carousel(interval="5000")
-                        slide(ng-repeat="slide in slides", active="{{ slide.active }}")
-                            img(ng-src="{{ slide.image }}")
-                            .carousel-caption
-                                h3 {{ slide.title }}
-                                p {{ slide.text }}
-                    br
+            .jumbotron
+                h1 ARKH
+                h3 abandon hope ye who enter here
+            block page
+            nav.nav.navbar-fixed-bottom.navbar-inverse
+                .navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-collapse")
+                        span.sr-only Toggle Navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="#", style="font-family: 'Poiret One', cursive;") ARKH
+                .collapse.navbar-collapse.navbar-right(id="navbar-collapse")
+                    ul.nav.navbar-nav
+                        li
+                            a(href="") STUFF
+                        li
+                            a(href="") MORE STUFF
+                        li
+                            a(href="") LOGIN
+                        li
+                            a(href="") HOME
